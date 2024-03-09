@@ -1,5 +1,5 @@
 #!/bin/sh
-for folder in 'charts' 'data'; do
+for folder in 'charts' 'data' 'results'; do
   mkdir -p "/experiment/$folder"
   chmod 777 "/experiment/$folder"
 done
