@@ -9,3 +9,11 @@ services:
         - ./scripts:/scripts:rw
     entrypoint: /bin/sh -c
     command: scripts/create-folders.sh
+
+  learning:
+    depends_on:
+      prepare:
+        condition: service_completed_successfully
+    image: davidedomini99/experiment-fbfl-pm10:latest
+    volumes:
+      - ./results:/experiment/results:rw
