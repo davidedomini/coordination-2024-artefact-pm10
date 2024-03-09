@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+
+  prepare:
+    image: alpine:3.18.3
+    volumes:
+        - .:/experiment:rw
+        - ./scripts:/scripts:rw
+    entrypoint: /bin/sh -c
+    command: scripts/create-folders.sh
